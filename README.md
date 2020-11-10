@@ -74,6 +74,7 @@ Now edit the README.md file. When you have finished editing, commit your changes
 
 The final state of the file should be as follows (replacing the "Created by" information with your name):
 
+```
 # Exercise-05g-Networked-Game
 Exercise for MSCH-C220, 10 November 2020
 
@@ -94,3 +95,4 @@ None
 
 ## Created by 
 Jason Francis
+```
