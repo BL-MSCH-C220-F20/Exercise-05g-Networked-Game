@@ -1,16 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 20, 2, 20 )
 
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( -10, 1, 10, 10, 1, -10, 10, 1, 10, -10, 1, -10, -10, -1, 10, 10, -1, -10, 10, -1, 10, -10, -1, -10, 10, 1, 10, -10, 1, -10, 10, 1, -10, -10, 1, 10, 10, -1, 10, -10, -1, -10, 10, -1, -10, -10, -1, 10, 10, 1, 10, -10, -1, 10, -10, 1, 10, 10, -1, 10, 10, 1, -10, -10, -1, -10, -10, 1, -10, 10, -1, -10 )
+
 [node name="Game" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
+[node name="Ground" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground"]
 mesh = SubResource( 1 )
 material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+shape = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.829281, 0.558831, 0, -0.558831, 0.829281, 0, 13.8755, 19.456 )
